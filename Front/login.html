@@ -41,23 +41,23 @@
 
       //버튼을 클릭할 때 실행
       $("#loginbtn").click(function () {
-        var userId = $("#userId").val();
-        var userPassword = $("#userPassword").val();
+        var memeberId = $("#userId").val();
+        var memberPassword = $("#userPassword").val();
 
-        if (userId == "") {
+        if (memeberId == "") {
           alert("아이디를 입력하세요");
           $("#userId").focus();
           return false;
         }
-        if (userPassword == "") {
+        if (memberPassword == "") {
           alert("비밀번호를 입력하세요");
           $("#userPasword").focus();
           return false;
         }
 
         var jsonData = {
-          studentsName: userId,
-          studentsPassword: userPassword,
+          membersName: memeberId,
+          membersPassword: memberPassword,
         };
         //AJAX 세팅
         // $.ajax({
