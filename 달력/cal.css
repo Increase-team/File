@@ -27,7 +27,8 @@
   }
 
   .calendar {
-    width: 600px;
+    width: 700px;
+    height: auto;
     padding-top: 50px;
     padding: 2%;
     margin-left: 50px;
@@ -154,13 +155,13 @@
   .dates {
     display: flex;
     flex-flow: row wrap;
-    height: 500px;
     border-top: 1px solid #333333;
     border-right: 1px solid #333333;
   }
   
   .date {
     width: calc(100% / 7);
+    height: 105px;
     padding: 10px;
     text-align: right;
     /* border-bottom: 1px solid #333333;
@@ -179,9 +180,16 @@
   }
   
   .other {
-    opacity: 0.3;
+    opacity: 0;
   }
   
+  .space{
+    width: 60px;
+    height: 60px;
+    background-color: gainsboro;
+    border-radius: 50%;
+  }
+
   /* .today {
     position: relative;
     color: #FFFFFF;

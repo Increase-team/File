@@ -39,7 +39,7 @@ const renderCalender = () => {
     const condition = i >= firstDateIndex && i < lastDateIndex + 1
                       ? 'this'
                       : 'other';
-    dates[i] = `<div class="date"><span class=${condition}>${date}</span></div>`;
+    dates[i] = `<div class="date"><span class=${condition}>${date}<div class="space"></div></span></div>`;
   });
 
   document.querySelector('.dates').innerHTML = dates.join('');
