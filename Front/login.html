@@ -53,29 +53,30 @@
         }
         if (memberPassword == "") {
           alert("비밀번호를 입력하세요");
-          $("#userPasword").focus();
+          $("#userPassword").focus();
           return false;
         }
 
         var jsonData = {
-          membersName: memeberId,
-          membersPassword: memberPassword,
+          memberId: memeberId,
+          memberPassword: memberPassword,
         };
-        //AJAX 세팅
-        // $.ajax({
-        //   url: "http://localhost:8080/api/v1/login",
-        //   type: "POST",
-        //   contentType: "application/json",
-        //   dataType: "json",
-        //   data: JSON.stringify(jsonData),
-        //   success: function (response) {
-        //     if (response) {
-        //       location.href = "#"; //페이지 이동!
-        //     } else {
-        //       alert("비밀번호 혹은 이름이 틀렸습니다.");
-        //     }
-        //   },
-        // });
+        // AJAX 세팅
+        $.ajax({
+          url: "http://localhost:8080/login",
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+          data: JSON.stringify(jsonData),
+          success: function (response) {
+            if (response) {
+              // location.href = "../달력/cal.html"; //페이지 이동!
+              console.log("1111");
+            } else {
+              alert("비밀번호 혹은 이름이 틀렸습니다.");
+            }
+          },
+        });
       });
     </script>
   </body>

@@ -23,7 +23,13 @@
           <input id="userrePassword" type="password" required />
           <label>비밀번호 재확인</label>
         </div>
-        <input class="login-btn" id="loginbtn" type="butten" value="로그인" />
+        <input
+          class="login-btn"
+          id="loginbtn"
+          type="butten"
+          value="로그인"
+          onclick="join()"
+        />
       </div>
     </div>
     <script
@@ -33,11 +39,11 @@
     ></script>
     <script>
       function join() {
-        var password = $("#password").val();
-        var rePassword = $("#rePassword").val();
-        var userName = $("#userName").val();
+        var password = $("#userPassword").val();
+        var rePassword = $("#userrePassword").val();
+        var userId = $("#userId").val();
         //빈칸 체크
-        if (password == "" || rePassword == "" || userName == "") {
+        if (password == "" || rePassword == "" || userId == "") {
           alert("양식을 모두 적어주세요.");
           return false;
         }
@@ -49,23 +55,24 @@
         }
         //API서버에 전송할 json 생성
         var jsonData = {
-          studentsName: userName,
-          studentsPassword: rePassword,
+          userId: userId,
+          userPassword: rePassword,
         };
 
-        // $.ajax({
-        //   url : 'http://localhost:8080/api/v1/students',
-        //   type : 'POST',
-        //   contentType: 'application/json', //서버에 json 타입으로 보낼 예정
-        //   dataType : 'json', //서버 결과를 json으로 응답받겠다.
-        //   data : JSON.stringify(jsonData),
-        //   success : function(response){
-        //     console.log(response)
-        //     if(response > 0){
-        //       alert("회원가입이 완료되었습니다.")
-        //     }
-        //   }
-        // })
+        $.ajax({
+          url: "http://localhost:8080/member",
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+          data: JSON.stringify(jsonData),
+          success: function (response) {
+            if (response) {
+              console.log("111");
+            } else {
+              alert("비밀번호 혹은 이름이 틀렸습니다.");
+            }
+          },
+        });
       }
     </script>
   </body>
