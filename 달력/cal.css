@@ -186,7 +186,7 @@
   width: 60px;
   height: 60px;
   background-color: gainsboro;
-  border-radius: 50%;
+  border-radius: 40%;
   opacity: 0.4;
 }
 
@@ -220,12 +220,15 @@
 }
 .picture:hover {
   background-color: white;
+  cursor: pointer;
 }
 .statistics:hover {
   background-color: white;
+  cursor: pointer;
 }
 .question:hover {
   background-color: white;
+  cursor: pointer;
 }
 .logout:hover {
   background-color: white;
