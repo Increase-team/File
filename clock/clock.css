@@ -1,0 +1,44 @@
+*{
+    font-family:'Lucida Sans'; 
+    text-align: center;
+    position: relative;
+}
+
+body{
+   background-image: url(/img/pexels-vincent-rivaud-4062614.jpg);
+   background-position: center;
+   background-size: cover;
+  
+}
+
+.date{
+    position: relative;
+    top: 170px;
+    font-size: 50px; 
+    color: rgb(255, 255, 255);  /* 흰색 */
+}
+
+.time{
+    position: relative;
+    top: 180px;
+    font-size: 150px;
+    font-weight: bold;
+    color: rgb(179, 21, 171);  /*보라색 */
+}
+
+.menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+   
+}
+
+.menu ul li{
+    list-style: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+}
