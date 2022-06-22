@@ -55,12 +55,12 @@
         }
         //API서버에 전송할 json 생성
         var jsonData = {
-          userId: userId,
-          userPassword: rePassword,
+          memberName: userId,
+          memberPassword: rePassword,
         };
 
         $.ajax({
-          url: "http://localhost:8080/member",
+          url: "http://localhost:8080/members",
           type: "POST",
           contentType: "application/json",
           dataType: "json",
