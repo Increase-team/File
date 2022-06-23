@@ -39,7 +39,8 @@ const renderCalender = () => {
     const condition = i >= firstDateIndex && i < lastDateIndex + 1
                       ? 'this'
                       : 'other';
-    dates[i] = `<div class="date"><span class=${condition}>${date}<div class="space"></div></span></div>`;
+    dates[i] = `<div class="date"><span class=${condition}>${date}<button class="space"></button></span></div>`;
+    console.log(dates[i])
   });
 
   document.querySelector('.dates').innerHTML = dates.join('');
@@ -53,6 +54,8 @@ const renderCalender = () => {
       }
     }
   }
+
+
 };
 
 renderCalender();
@@ -71,3 +74,40 @@ const goToday = () => {
   date = new Date();
   renderCalender();
 };
+
+
+
+
+$('.space').click(function(){
+  $('.write-popup').css('display', 'block');
+});
+$('.cancel').click(function(){
+  $('.write-popup').css('display', 'none');
+});
+
+
+$(function(){
+  
+  var embed = $('#player'); //동영상 코드
+
+  $('.status').on('click', function(){ //레이어 열때
+      var path = $(this).attr('href');
+      $('.cont').append(embed);
+      $(path).show();
+      $('.dim').show();
+  })
+
+  $('.close').on('click', function(){ //레이어 닫을때
+      $(this).parents('#layer').hide();
+      $('.dim').hide();
+      $('.cont').empty();
+  })
+
+$('.dim').on('click', function(){
+  $(this).hide();
+  $('#layer').hide();
+  $('.cont').empty();
+})
+
+});
+
