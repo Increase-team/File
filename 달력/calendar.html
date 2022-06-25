@@ -363,12 +363,17 @@
             valueDate = dates[i]
             if(i < thisFirst.getDay()){
                 htmlDates += '<div class="date last">'+dates[i]+'</div>'; 
-            }else if(today.getDate()==dates[i] && today.getMonth()==CDate.getMonth() && today.getFullYear()==CDate.getFullYear()){
+            }
+            else if(today.getDate()==dates[i] && today.getMonth()==CDate.getMonth() && today.getFullYear()==CDate.getFullYear()){
                 htmlDates += '<div id="date_'+dates[i]+'" class="date today"><button class="space" onclick="xx()">'+dates[i]+'</button></div>'; 
             }else if(i >= thisFirst.getDay() + thisLast.getDate()){
                 htmlDates += '<div class="date next">'+dates[i]+'</div>'; 
-            }else{
-                htmlDates += '<div id="date_'+dates[i]+'" class="date"><button class="space" onclick="yy()">'+dates[i]+'</button></div>';  
+            }
+            else if(i <= thisFirst.getDay() + thisLast.getDate() && dates[i]<today.getDate()){
+                htmlDates += '<div id="date_'+dates[i]+'" class="date"><button id="prespace" class="space" onclick="yy()">'+dates[i]+'</div>';
+            }
+            else if(i <= thisFirst.getDay() + thisLast.getDate() && dates[i]>today.getDate()){
+                htmlDates += '<div id="date_'+dates[i]+'" class="date"><button id="prespace" class="space">'+dates[i]+'</div>';
             }
         }
         
@@ -429,17 +434,19 @@
         $('.write-popup').css('display', 'block');
         $('.cancel').click(function(){
         $('.write-popup').css('display', 'none');
+        location.reload();
         });
     }
 
     function yy(){
         $('.write-popup').css('display', 'block');
         $('.cancel').click(function(){
-        $('.write-popup').css('display', 'none');
+            $('.write-popup').css('display', 'none');
+            location.reload();
         });
         $('.update').click(function(){
             alert('수정불가능')
-            location.reload();
+            ('.write-popup').css('display', 'none');
         })
         }
     </script>
