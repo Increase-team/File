@@ -1,235 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+
+        /* sieheader */
         .sideheader {
-        position: fixed;
-        width: 250px;
-        height: 100%;
-        background-color: skyblue;
-        /* border-left: 15px solid green; */
-        transition: 0.5s;
-        overflow: hidden;
-        padding-top: 30px;
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            background-color: skyblue;
+            transition: 0.5s;
+            overflow: hidden;
+            padding-top: 30px;
         }
+
         .emotion {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
-        font-size: 20px;
-        margin-bottom: 20px;
-        background-color: antiquewhite;
-        border-radius: 5px;
-        padding: 3%;
-        margin-left: 5%;
-        margin-right: 5%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            font-size: 20px;
+            margin-bottom: 20px;
+            background-color: antiquewhite;
+            border-radius: 5px;
+            padding: 3%;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         .happy {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
 
         .happy-color {
-        background-color: yellow;
-        width: 20px;
-        height: 20px;
+            background-color: yellow;
+            width: 20px;
+            height: 20px;
         }
 
         .soso {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
 
         .soso-color {
-        background-color: silver;
-        width: 20px;
-        height: 20px;
+            background-color: silver;
+            width: 20px;
+            height: 20px;
         }
+
         .romance {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
+
         .romance-color {
-        background-color: pink;
-        width: 20px;
-        height: 20px;
+            background-color: pink;
+            width: 20px;
+            height: 20px;
         }
+
         .angly {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
+
         .angly-color {
-        background-color: red;
-        width: 20px;
-        height: 20px;
+            background-color: red;
+            width: 20px;
+            height: 20px;
         }
+
         .sad {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
+
         .sad-color {
-        background-color: blue;
-        width: 20px;
-        height: 20px;
+            background-color: blue;
+            width: 20px;
+            height: 20px;
         }
+
         .issitation {
-        display: flex;
-        justify-content: space-around;
+            display: flex;
+            justify-content: space-around;
         }
+
         .issitation-color {
-        background-color: orangered;
-        width: 20px;
-        height: 20px;
+            background-color: orangered;
+            width: 20px;
+            height: 20px;
         }
+
         .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .list {
-        padding-left: 10%;
-        }
-        .list div {
-        padding: 10%;
-        }
-        .list div a {
-        text-decoration: none;
-        color: black;
-        }
-        .list div a:hover{
-        color: violet;
-        transition: 1.5s;
-        }
-        .picture:hover {
-        background-color: white;
-        }
-        .statistics:hover {
-        background-color: white;
-        }
-        .question:hover {
-        background-color: white;
-        }
-        .logout:hover {
-        background-color: white;
+            padding-left: 10%;
         }
 
-        .calendarbox {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: aliceblue;
-    
+        .list div {
+            padding: 10%;
         }
+
+        .list div a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .list div a:hover {
+            color: violet;
+            transition: 1.5s;
+        }
+
+        .picture:hover {
+            background-color: white;
+        }
+
+        .statistics:hover {
+            background-color: white;
+        }
+
+        .question:hover {
+            background-color: white;
+        }
+
+        .logout:hover {
+            background-color: white;
+        }   
 
         /* popup */
-        .write-popup{
-        z-index: 1;
-        display: none;
-        position: absolute;
-        left: 0; 
-        right: 0; 
-        margin : 40px auto;
-        width: 700px;
-        height: 500px;
-        border-radius: 5px;
-        }
-        .editor{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 3%;
-        margin-left: auto;
-        margin-right: auto;
-        width: 80%;
-        height: 80%;
-        background-color: white;
+        .write-popup {
+            z-index: 1;
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 40px auto;
+            width: 700px;
+            height: 500px;
+            border-radius: 5px;
         }
 
-        #happy{
-        width: 60px;
-        height: 60px;
-        background-color: yellow;
+        .editor {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 3%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            height: 80%;
+            background-color: white;
         }
 
-        #soso{
-        width: 60px;
-        height: 60px;
-        background-color: silver;
+        #happy {
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
         }
 
-        #romance{width: 60px; height: 60px; background-color: pink;}
-        #angly{width: 60px; height: 60px; background-color: red;}
-        #sad{width: 60px; height: 60px; background-color: blue;}
-        #issitation{ width: 60px; height: 60px; background-color: orangered; }
-        .color-select{display: grid; justify-content: center; position: relative; left: 22%; background-color: antiquewhite; padding: 15px;width: 300px;}
-        #negetive{padding-top: 15px;}
-        .btn-area{text-align: center;}
-        .cancel{font-size: 18px; background-color: #e74a3b; padding: 2%; text-decoration: none; border-radius: 3px; margin-right: 10px;}
-        .update{font-size: 18px; background-color: green; padding: 2%; text-decoration: none; border-radius: 3px; margin-right: 10px;}
-        .success{font-size: 18px; background-color: #1cc88a; padding: 2%; text-decoration: none; border-radius: 3px;}
+        #soso {
+            width: 60px;
+            height: 60px;
+            background-color: silver;
+        }
 
-        /*  input box */
-        .input-box{display: flex;justify-content: space-around;}
+        #romance {
+            width: 60px;
+            height: 60px;
+            background-color: pink;
+        }
 
-        /* 통계 */
+        #angly {
+            width: 60px;
+            height: 60px;
+            background-color: red;
+        }
 
-        #layer {display:none; position:absolute; top:80%; left:75%; width:600px; height:376px; margin:-188px 0 0 -300px; padding:20px; background:#eee; box-shadow:1px 1px 10px rgba(0,0,0,0.3); border:1px solid #dadada; z-index:21;}
-        #layer #player {display:block; margin:20px auto 0;}
-        #layer .inner {position:relative;}
-        #layer .inner .close {position:absolute; top:-30px; right:0; display:block; width:20px; height:20px; background:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt18SOam3wUX0wExC6ji5-lY732vA2fEPBscikPQaLbT_tJd7Y7g') no-repeat 0 0; text-indent:-999em; background-size:20px 20px;}
-        .dim {display:none; position:fixed; _position:absolute; top:0;left:0; background:#000; width:100%; height:100%; filter:Alpha(opacity=40); opacity:0.4; -moz-opacity:0.4; z-index:20;}
+        #sad {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+        }
+
+        #issitation {
+            width: 60px;
+            height: 60px;
+            background-color: orangered;
+        }
+
+        .color-select {
+            display: grid;
+            justify-content: center;
+            position: relative;
+            left: 22%;
+            background-color: antiquewhite;
+            padding: 15px;
+            width: 300px;
+        }
+
+        #negetive {
+            padding-top: 15px;
+        }
+
+        .btn-area {
+            text-align: center;
+        }
+
+        .cancel {
+            font-size: 18px;
+            background-color: #e74a3b;
+            padding: 2%;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        .update {
+            font-size: 18px;
+            background-color: green;
+            padding: 2%;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-right: 10px;
+        }
+
+        .success {
+            font-size: 18px;
+            background-color: #1cc88a;
+            padding: 2%;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        /*  popup input box */
+        .input-box {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        /* 통계 팝업 */
+        #layer {
+            display: none;
+            position: absolute;
+            top: 80%;
+            left: 75%;
+            width: 600px;
+            height: 376px;
+            margin: -188px 0 0 -300px;
+            padding: 20px;
+            background: #eee;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid #dadada;
+            z-index: 21;
+        }
+
+        #layer #player {
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        #layer .inner {
+            position: relative;
+        }
+
+        #layer .inner .close {
+            position: absolute;
+            top: -30px;
+            right: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt18SOam3wUX0wExC6ji5-lY732vA2fEPBscikPQaLbT_tJd7Y7g') no-repeat 0 0;
+            text-indent: -999em;
+            background-size: 20px 20px;
+        }
+
+        .dim {
+            display: none;
+            position: fixed;
+            _position: absolute;
+            top: 0;
+            left: 0;
+            background: #000;
+            width: 100%;
+            height: 100%;
+            filter: Alpha(opacity=40);
+            opacity: 0.4;
+            -moz-opacity: 0.4;
+            z-index: 20;
+        }
 
         /* 달력 css */
-        .calendar {width: 700px; height: auto; padding: 5px 20px 20px 20px; box-sizing: border-box; border: 1px solid;}
-        .calendar > .header {text-align: center; padding-top: 15px; padding-bottom: 30px;}
-        .calendar > .header > .title {width:50%; display: inline-block; font-size: 35px;}
-        .calendar > .header > .calendar_btn {width: 30px;height: 30px; border: none; padding: 0; background-color: transparent; font-size: 35px; vertical-align: middle; color: black;}
-        .calendar > .day {width:100%; display: table; table-layout: fixed;}
-        .calendar > .day > div {display: table-cell; text-align: center; height: auto; vertical-align: middle;}
-        .calendar > .day > div:first-child {color: red;}
-        .calendar > .day > div:last-of-type {color: blue;}
-        .calendar > .dates {display: flex; flex-wrap: wrap; width: 100%;}
-        .calendar > .dates > .date {text-align: center; width: calc(100%/7); height: 70px; box-sizing: border-box; line-height: 2; border-radius: 3px; padding-top: 15px;} 
-        .calendar > .dates > .date:nth-child(7n){color: blue;}
-        .calendar > .dates > .date:nth-child(7n+1){color: red;}
-        .calendar > .dates > .last {color: #c8c8c8 !important;}
-        .calendar > .dates > .next {color: #c8c8c8 !important;}
-        .space {width: 45px; height: 45px; background-color: gainsboro; border-radius: 50%; cursor: pointer; border: 0; outline: 0;}
+
+        /* 달력 전체 틀 */
+        .calendarbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: aliceblue;
+        }
+
+        /* 달력 세부사항 */
+        .calendar {
+            position: relative;
+            left: 8%;
+            width: 700px;
+            height: auto;
+            padding: 5px 20px 20px 20px;
+            box-sizing: border-box;
+            border: 1px solid;
+        }
+
+        .calendar>.header {
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: 30px;
+        }
+
+        .calendar>.header>.title {
+            width: 50%;
+            display: inline-block;
+            font-size: 35px;
+        }
+
+        .calendar>.header>.calendar_btn {
+            width: 30px;
+            height: 30px;
+            border: none;
+            padding: 0;
+            background-color: transparent;
+            font-size: 35px;
+            vertical-align: middle;
+            color: black;
+        }
+
+        .calendar>.day {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+        }
+
+        .calendar>.day>div {
+            display: table-cell;
+            text-align: center;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .calendar>.day>div:first-child {
+            color: red;
+        }
+
+        .calendar>.day>div:last-of-type {
+            color: blue;
+        }
+
+        .calendar>.dates {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .calendar>.dates>.date {
+            text-align: center;
+            width: calc(100%/7);
+            height: 70px;
+            box-sizing: border-box;
+            line-height: 2;
+            border-radius: 3px;
+            padding-top: 15px;
+        }
+
+        .calendar>.dates>.date:nth-child(7n) {
+            color: blue;
+        }
+
+        .calendar>.dates>.date:nth-child(7n+1) {
+            color: red;
+        }
+
+        .calendar>.dates>.last {
+            color: #c8c8c8 !important;
+        }
+
+        .calendar>.dates>.next {
+            color: #c8c8c8 !important;
+        }
+
+        .space {
+            width: 45px;
+            height: 45px;
+            background-color: gainsboro;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 0;
+            outline: 0;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- 팝업창 -->
         <div class="write-popup">
             <div class="editor">
-            <div class="color-select">
-                <div id="positive">
-                <button id="happy"></button>
-                <button id="soso"></button>
-                <button id="romance"></button>
+                <div class="color-select">
+                    <div id="positive">
+                        <button id="happy"></button>
+                        <button id="soso"></button>
+                        <button id="romance"></button>
+                    </div>
+                    <div id="negetive">
+                        <button id="angly"></button>
+                        <button id="sad"></button>
+                        <button id="issitation"></button>
+                    </div>
                 </div>
-                <div id="negetive">
-                <button id="angly"></button>
-                <button id="sad"></button>
-                <button id="issitation"></button>
+                <div class="input-box">
+                    <textarea id="content" rows="7" cols="50" placeholder="내용을 간단히 적어주세요..."></textarea>
                 </div>
-            </div>
-            <div class="input-box">
-                <textarea id="content" rows="7" cols="50" placeholder="내용을 간단히 적어주세요..."></textarea>
-            </div>
                 <div class="btn-area">
                     <input id="boardIdHidden" type="hidden">
                     <a href="#" class="cancel">취소</a>
@@ -240,58 +447,59 @@
         </div>
         <!-- 통계 팝업 -->
         <div id="layer">
-        <div class="inner">
-            <div class="cont">
-            <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/Uy7Sm7_A70M" frameborder="0" allowfullscreen></iframe>
+            <div class="inner">
+                <div class="cont">
+                    <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/Uy7Sm7_A70M"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>
+                <a href="#none" class="close">close</a>
             </div>
-            <a href="#none" class="close">close</a>
-        </div>
         </div>
         <div class="dim"></div>
         <div class="sideheader">
             <div class="emotion">
-              <div class="positive">
-                <div class="happy">
-                  <p>기쁨</p>
-                  <div class="happy-color"></div>
+                <div class="positive">
+                    <div class="happy">
+                        <p>기쁨</p>
+                        <div class="happy-color"></div>
+                    </div>
+                    <div class="soso">
+                        <p>보통</p>
+                        <div class="soso-color"></div>
+                    </div>
+                    <div class="romance">
+                        <p>설렘</p>
+                        <div class="romance-color"></div>
+                    </div>
                 </div>
-                <div class="soso">
-                  <p>보통</p>
-                  <div class="soso-color"></div>
+                <div class="negetive">
+                    <div class="angly">
+                        <p>분노</p>
+                        <div class="angly-color"></div>
+                    </div>
+                    <div class="sad">
+                        <p>슬픔</p>
+                        <div class="sad-color"></div>
+                    </div>
+                    <div class="issitation">
+                        <p>짜증</p>
+                        <div class="issitation-color"></div>
+                    </div>
                 </div>
-                <div class="romance">
-                  <p>설렘</p>
-                  <div class="romance-color"></div>
-                </div>
-              </div>
-              <div class="negetive">
-                <div class="angly">
-                  <p>분노</p>
-                  <div class="angly-color"></div>
-                </div>
-                <div class="sad">
-                  <p>슬픔</p>
-                  <div class="sad-color"></div>
-                </div>
-                <div class="issitation">
-                  <p>짜증</p>
-                  <div class="issitation-color"></div>
-                </div>
-              </div>
             </div>
             <div class="list">
-              <div class="picture">
-                <a href="#">시작화면</a>
-              </div>
-              <div class="statistics">
-                <a href="#layer" id="player" class="status">통계</a>
-              </div>
-              <div class="question">
-                <a href="#">도움말</a>
-              </div>
-              <div class="logout">
-                <a href="#">Logout</a>
-              </div>
+                <div class="picture">
+                    <a href="#">시작화면</a>
+                </div>
+                <div class="statistics">
+                    <a href="#layer" id="player" class="status">통계</a>
+                </div>
+                <div class="question">
+                    <a href="#">도움말</a>
+                </div>
+                <div class="logout">
+                    <a href="#">Logout</a>
+                </div>
             </div>
         </div>
         <div class="calendarbox">
@@ -313,142 +521,125 @@
                 <div class="dates"></div>
             </div>
         </div>
-        <div class="update-popup">
-            <div class="editor">
-                <div class="close">
-                    <a href="#" class="btn-close">닫기</a>
-                </div>
-                <div class="input-box">
-                    <label for="title">제목 : </label>
-                    <input id="upt-title" type="text" placeholder="제목을 입력하세요...">
-                </div>
-                <div class="input-box">
-                    <textarea id="upt-content" rows="10" cols="65" placeholder="내용을 간단히 적어주세요..."></textarea>
-                </div>
-                <div class="btn-area">
-                    <a id="contentUpdate" href="#" class="btn-update">수정</a>
-                    <a id="contentDelete" href="#" class="btn-delete">삭제</a>
-                </div>
-            </div>
-        </div>
     </div>
     <script src="https://kit.fontawesome.com/7f3a427fdf.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        var CDate = new Date(); 
+        var CDate = new Date();
         var today = new Date();
         var selectCk = 0;
-        
-        var buildcalendar = function(){
-            var htmlDates = ''; 
+
+        var buildcalendar = function () {
+            var htmlDates = '';
             var prevLast = new Date(CDate.getFullYear(), CDate.getMonth(), 0); //지난 달의 마지막 날 
             var thisFirst = new Date(CDate.getFullYear(), CDate.getMonth(), 1); //이번 달의 첫쨰 날
-        var thisLast = new Date(CDate.getFullYear(), CDate.getMonth() + 1, 0); //이번 달의 마지막 날
-        document.querySelector(".year").innerHTML = CDate.getFullYear() + "년";  // year에 년도 출력
-        document.querySelector(".month").innerHTML = (CDate.getMonth() + 1) + "월";  //month에 월 출력
-        const dates = []; 
-        if(thisFirst.getDay()!=0){ 
-            for(var i = 0; i < thisFirst.getDay(); i++){
-                dates.unshift(prevLast.getDate()-i); // 지난 달 날짜 채우기
-            } 
-        } 
-        for(var i = 1; i <= thisLast.getDate(); i++){
+            var thisLast = new Date(CDate.getFullYear(), CDate.getMonth() + 1, 0); //이번 달의 마지막 날
+            document.querySelector(".year").innerHTML = CDate.getFullYear() + "년";  // year에 년도 출력
+            document.querySelector(".month").innerHTML = (CDate.getMonth() + 1) + "월";  //month에 월 출력
+            const dates = [];
+            if (thisFirst.getDay() != 0) {
+                for (var i = 0; i < thisFirst.getDay(); i++) {
+                    dates.unshift(prevLast.getDate() - i); // 지난 달 날짜 채우기
+                }
+            }
+            for (var i = 1; i <= thisLast.getDate(); i++) {
                 dates.push(i); // 이번 달 날짜 채우기 
-        } 
-        for(var i = 1; i <= 13 - thisLast.getDay(); i++){ 
+            }
+            for (var i = 1; i <= 13 - thisLast.getDay(); i++) {
                 dates.push(i); // 다음 달 날짜 채우기 (나머지 다 채운 다음 출력할 때 42개만 출력함)
-        } 
-        
-        for(var i = 0; i < 42; i++){
-            valueDate = dates[i]
-            if(i < thisFirst.getDay()){
-                htmlDates += '<div class="date last">'+dates[i]+'</div>'; 
             }
-            else if(today.getDate()==dates[i] && today.getMonth()==CDate.getMonth() && today.getFullYear()==CDate.getFullYear()){
-                htmlDates += '<div id="date_'+dates[i]+'" class="date today"><button class="space" onclick="xx()">'+dates[i]+'</button></div>'; 
-            }else if(i >= thisFirst.getDay() + thisLast.getDate()){
-                htmlDates += '<div class="date next">'+dates[i]+'</div>'; 
+
+            for (var i = 0; i < 42; i++) {
+                valueDate = dates[i]
+                if (i < thisFirst.getDay()) {
+                    htmlDates += '<div class="date last">' + dates[i] + '</div>';
+                }
+                else if (today.getDate() == dates[i] && today.getMonth() == CDate.getMonth() && today.getFullYear() == CDate.getFullYear()) {
+                    htmlDates += '<div id="date_' + dates[i] + '" class="date today"><button class="space" onclick="xx()">' + dates[i] + '</button></div>';
+                } else if (i >= thisFirst.getDay() + thisLast.getDate()) {
+                    htmlDates += '<div class="date next">' + dates[i] + '</div>';
+                }
+                else if (i <= thisFirst.getDay() + thisLast.getDate() && dates[i] < today.getDate()) {
+                    htmlDates += '<div id="date_' + dates[i] + '" class="date"><button id="prespace" class="space" onclick="yy()">' + dates[i] + '</div>';
+                }
+                else if (i <= thisFirst.getDay() + thisLast.getDate() && dates[i] > today.getDate()) {
+                    htmlDates += '<div id="date_' + dates[i] + '" class="date"><button id="prespace" class="space">' + dates[i] + '</div>';
+                }
             }
-            else if(i <= thisFirst.getDay() + thisLast.getDate() && dates[i]<today.getDate()){
-                htmlDates += '<div id="date_'+dates[i]+'" class="date"><button id="prespace" class="space" onclick="yy()">'+dates[i]+'</div>';
-            }
-            else if(i <= thisFirst.getDay() + thisLast.getDate() && dates[i]>today.getDate()){
-                htmlDates += '<div id="date_'+dates[i]+'" class="date"><button id="prespace" class="space">'+dates[i]+'</div>';
-            }
+
+
+
+
+
+            document.querySelector(".dates").innerHTML = htmlDates;
         }
-        
-        
-               
-                          
-        
-    document.querySelector(".dates").innerHTML = htmlDates; 
-    } 
 
-    function prevCal(){
-        CDate.setMonth(CDate.getMonth()-1); 
-        buildcalendar(); 
-    } 
-    function nextCal(){
-        CDate.setMonth(CDate.getMonth()+1);
-        buildcalendar(); 
-    }
+        function prevCal() {
+            CDate.setMonth(CDate.getMonth() - 1);
+            buildcalendar();
+        }
+        function nextCal() {
+            CDate.setMonth(CDate.getMonth() + 1);
+            buildcalendar();
+        }
 
-   
 
-    buildcalendar();
 
-    $(function(){
-  
-    var embed = $('#player'); //동영상 코드
+        buildcalendar();
 
-    $('.status').on('click', function(){ //레이어 열때
-        var path = $(this).attr('href');
-        $('.cont').append(embed);
-        $(path).show();
-        $('.dim').show();
-    })
+        $(function () {
 
-    $('.close').on('click', function(){ //레이어 닫을때
-        $(this).parents('#layer').hide();
-        $('.dim').hide();
-        $('.cont').empty();
-    })
+            var embed = $('#player'); //동영상 코드
 
-    $('.dim').on('click', function(){
-    $(this).hide();
-    $('#layer').hide();
-    $('.cont').empty();
-    })
+            $('.status').on('click', function () { //레이어 열때
+                var path = $(this).attr('href');
+                $('.cont').append(embed);
+                $(path).show();
+                $('.dim').show();
+            })
 
-    });
+            $('.close').on('click', function () { //레이어 닫을때
+                $(this).parents('#layer').hide();
+                $('.dim').hide();
+                $('.cont').empty();
+            })
 
-    //팝업관련
-    // $('.space').click(function(){
-    // $('.write-popup').css('display', 'block');
-    // });
-    // $('.cancel').click(function(){
-    // $('.write-popup').css('display', 'none');
-    // });
+            $('.dim').on('click', function () {
+                $(this).hide();
+                $('#layer').hide();
+                $('.cont').empty();
+            })
 
-    function xx(){
-        $('.write-popup').css('display', 'block');
-        $('.cancel').click(function(){
-        $('.write-popup').css('display', 'none');
-        location.reload();
         });
-    }
 
-    function yy(){
-        $('.write-popup').css('display', 'block');
-        $('.cancel').click(function(){
-            $('.write-popup').css('display', 'none');
-            location.reload();
-        });
-        $('.update').click(function(){
-            alert('수정불가능')
-            ('.write-popup').css('display', 'none');
-        })
+        //팝업관련
+        // $('.space').click(function(){
+        // $('.write-popup').css('display', 'block');
+        // });
+        // $('.cancel').click(function(){
+        // $('.write-popup').css('display', 'none');
+        // });
+
+        function xx() {
+            $('.write-popup').css('display', 'block');
+            $('.cancel').click(function () {
+                $('.write-popup').css('display', 'none');
+                location.reload();
+            });
+        }
+
+        function yy() {
+            $('.write-popup').css('display', 'block');
+            $('.cancel').click(function () {
+                $('.write-popup').css('display', 'none');
+            });
+            $('.update').click(function () {
+                alert('수정불가능')
+                location.reload();
+            })
         }
     </script>
 </body>
+
 </html>
