@@ -11,6 +11,7 @@ body {
   /* background-repeat: no-repeat; */
 }
 
+/* 달력 시간 및 날짜  */
 .date {
   position: relative;
   top: 170px;
@@ -26,6 +27,7 @@ body {
   color: rgb(255, 255, 255);
 }
 
+/* 우측 상단 메뉴 */
 .menu ul {
   display: flex;
   flex-direction: row;
@@ -45,4 +47,12 @@ body {
 .menu ul li a:hover {
   color: darkorange;
   transition: 1.8s;
+}
+
+/* 사이트설명 h2 */
+.container h2{
+  padding-top: 9%;
+  font-size: 35px;
+  color: dimgray;
+  line-height: 55px;
 }
