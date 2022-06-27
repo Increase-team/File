@@ -5,54 +5,25 @@
 }
 
 body {
-  background-image: url(../img/pexels-quang-nguyen-vinh-2132008.jpg);
+  background-image: repeating-linear-gradient(rgba(238, 127, 37, 0.5),rgba(238, 127, 37, 0.5)), url(../img/pexels-quang-nguyen-vinh-2132008.jpg);
   background-position: auto;
   background-size: cover;
   /* background-repeat: no-repeat; */
 }
 
-/* 달력 시간 및 날짜  */
-.date {
-  position: relative;
-  top: 170px;
-  font-size: 50px;
-  color: rgb(255, 255, 255); /* 흰색 */
-}
-
-.time {
-  position: relative;
-  top: 180px;
-  font-size: 150px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-}
-
-/* 우측 상단 메뉴 */
-.menu ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-}
-
-.menu ul li {
-  list-style: none;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.menu ul li a {
-  text-decoration: none;
-  color: dodgerblue;
-}
-.menu ul li a:hover {
-  color: darkorange;
-  transition: 1.8s;
-}
-
 /* 사이트설명 h2 */
 .container h2{
-  padding-top: 9%;
+  padding-top: 15%;
   font-size: 35px;
-  color: dimgray;
+  color: whitesmoke;
   line-height: 55px;
+}
+#start{
+  font-size: 50px;
+  padding: 15px;
+  background-color: transparent;
+}
+#start:hover{
+  transition: 1.5s;
+  background-color: red;
 }
