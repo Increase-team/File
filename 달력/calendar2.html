@@ -332,16 +332,21 @@
             left: 8%;
             width: 700px;
             height: auto;
-            padding: 5px 20px 20px 20px;
             box-sizing: border-box;
-            /* border: 1px solid; */
-            border-radius: 5%;
+            border: 0;
+            outline: 0;
+            border-radius: 15px;
+            background-color: steelblue;
+            
         }
 
         .calendar>.header {
             text-align: center;
             padding-top: 15px;
             padding-bottom: 30px;
+            border-radius: 15px;
+            color: azure;
+        
         }
 
         .calendar>.header>.title {
@@ -358,7 +363,7 @@
             background-color: transparent;
             font-size: 35px;
             vertical-align: middle;
-            color: black;
+            color: azure;
         }
 
         .calendar>.day {
@@ -367,6 +372,7 @@
             table-layout: fixed;
             font-size: 25px;
             font-weight: 700;
+            background-color: #e74a3b;
         }
 
         .calendar>.day>div {
@@ -388,11 +394,14 @@
             display: flex;
             flex-wrap: wrap;
             width: 100%;
+            background-color: whitesmoke;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
 
         .calendar>.dates>.date {
             position: relative;
-            text-align: right;
+            text-align: center;
             width: calc(100%/7);
             height: 100px;
             box-sizing: border-box;
@@ -400,7 +409,8 @@
             border-radius: 3px;
             font-size: 30px;
             align-items: center;
-            border: 2px solid black;
+            margin-top: 15px;
+
         }
 
         .calendar>.dates>.date:nth-child(7n) {
@@ -412,11 +422,13 @@
         }
 
         .calendar>.dates>.last {
-            color: snow !important;
+            color: gray !important;
+            opacity: 0.5;
         }
 
         .calendar>.dates>.next {
-            color: snow !important;
+            color: gray !important;
+            opacity: 0.5;
         }
 
         /* .space {
