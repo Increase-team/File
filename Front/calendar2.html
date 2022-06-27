@@ -453,6 +453,7 @@
             선택하신 감정은
           </h3>
           <div class="color-select">
+            <input id="hidden" type="hidden" val="">
             <div id="positive">
               <button id="happy" value="기쁨">기쁨</button>
               <button id="soso" value="보통">보통</button>
@@ -734,25 +735,71 @@
           },
         });
       });
-      console.log($(".color-select").children());
-      console.log($(".color-select").children().children().val());
-      console.log($("#selected-color")[0].innerHTML);
+      // console.log($(".color-select").children());
+      // console.log($(".color-select").children().children().val());
+      // console.log($("#selected-color")[0].innerHTML);
 
-      let len = $(".color-select").children().children().length;
-      console.log(len);
-      $(".color-select").click(function () {
-        for (let i = 0; i < len; i++) {
-          //   console.log(i);
-          console.log(
-            $(".color-select").children().children().children().prevObject[i]
-              .innerHTML
-          );
-          var text = $(".color-select").children().children().children()
-            .prevObject[i].innerHTML;
-        }
+      // let len = $(".color-select").children().children().length;
+      // console.log(len);
+
         // $("#selected-color")[0].innerHTML = text;
-        $("#selected-color").text(text);
-      });
+        // $("#selected-color").text(text);
+      //   $(".color-select").click(function () {
+      //     var innerText = ''
+      //     for(let i=0; i<len;i++){
+            
+      //         innerText = $(".color-select").children().children().children().prevObject[i].innerHTML;
+            
+      //       $("#selected-color").text(innerText)
+      //     }
+      // });
+
+      let len = $(".color-select").children().children().length
+      $('.color-select').click(function(){
+        // console.log($(".color-select").children().children().val())
+        let hidden = $("#hidden").val();
+        let val = $(".color-select").children().children().val();
+        for(let i=0; i<len;i++){
+          let inner = $(".color-select").children().children().children().prevObject[i].innerHTML;
+          let hiddenTest = $("#hidden").val(inner)[0].defaultValue
+          console.log(hiddenTest)
+          console.log(val)
+          console.log(inner)
+          console.log(hidden)
+
+          // console.log(hidden)
+          // if(inner == "기쁨"){
+          //   console.log(inner)
+          //   break
+          // }
+          // if(inner == "행복"){
+          //   console.log(inner)
+          //   break
+          // }
+          // if(inner == "설렘"){
+          //   console.log(inner)
+          //   break
+          // }
+          // if(inner == "분노"){
+          //   console.log(inner)
+          //   break
+          // }
+          // if(inner == "슬픔"){
+          //   console.log(inner)
+          //   break;
+          // }
+          // if(inner == "짜증"){
+          //   console.log(inner)
+          //   break
+          // }
+          console.log(i+" "+inner)
+          console.log(inner)
+          // let hiddenTest = $("#hidden").val(inner);
+          // console.log(hiddenTest)
+
+        }
+      })
+
     </script>
   </body>
 </html>
