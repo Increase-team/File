@@ -458,25 +458,33 @@
       left: 250px;
       width: calc(97% - 250px);
       height: 95%;
-      box-shadow: 5px 0px 5px 5px gray;
-      margin-top: 15px;
+      box-shadow: 5px 10px 15px 5px gray;
+      margin-top: 30px;
       margin-left: 30px;
+      border-radius: 15px;
     }
     .diary-title{
       font-size: 25px;
+      padding-bottom: 20px;
     }
 
-    .diary table{
+    .diary-content table{
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
+      text-align: center;
     }
   
-    .diary table thead th{
+    .diary-content table thead th{
         text-align: center;
         font-weight: 600;
     }
-    .diary table tbody td{
+    .diary-content table tbody td{
         text-align: center;
         padding: 10px;
+        border-bottom: 1px solid black;
+    }
+    
+    .diary-content table tbody tr:hover {
+      background-color: slateblue;   
     }
