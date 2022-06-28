@@ -182,12 +182,7 @@
             today.getMonth() == CDate.getMonth() &&
             today.getFullYear() == CDate.getFullYear()
           ) {
-            htmlDates +=
-              '<div id="date_' +
-              dates[i] +
-              '" class="date today" onclick="xx()"">' +
-              dates[i] +
-              "</div>";
+            htmlDates += '<div id="date_' + dates[i] + '" class="date today" onclick="xx()"><div style="background-color: #f2cfa5; height: 100%;">' + dates[i] + "</div></div>";
           } else if (i >= thisFirst.getDay() + thisLast.getDate()) {
             htmlDates += '<div class="date next">' + dates[i] + "</div>";
           } else if (

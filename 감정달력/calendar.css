@@ -412,11 +412,10 @@
     width: calc(100% / 7);
     height: 100px;
     box-sizing: border-box;
-    vertical-align: text-top;
+    vertical-align: middle;
     border-radius: 3px;
     font-size: 30px;
     align-items: center;
-    margin-top: 15px;
     cursor: pointer;
   }
 
