@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 사이드 헤더 -->
+        <div class="sideheader">
+            <!-- 시간 및 날짜 -->
+            <div id="date" class="date"></div>
+            <div id="time" class="time"></div>
+            <div class="emotion">
+            <div class="positive">
+                <div class="happy">
+                <p>기쁨</p>
+                <div class="happy-color"></div>
+                </div>
+                <div class="soso">
+                <p>보통</p>
+                <div class="soso-color"></div>
+                </div>
+                <div class="romance">
+                <p>설렘</p>
+                <div class="romance-color"></div>
+                </div>
+            </div>
+            <div class="negetive">
+                <div class="angry">
+                <p>분노</p>
+                <div class="angry-color"></div>
+                </div>
+                <div class="sad">
+                <p>슬픔</p>
+                <div class="sad-color"></div>
+                </div>
+                <div class="issitation">
+                <p>짜증</p>
+                <div class="issitation-color"></div>
+                </div>
+            </div>
+            </div>
+            <div class="list">
+                <div class="picture">
+                    <a href="../calendar2.html">달력</a>
+                </div>
+                <div class="statistics">
+                    <a href="#layer" id="player" class="status">통계</a>
+                </div>
+                <div class="question">
+                    <a href="#">도움말</a>
+                </div>
+                <div class="logout">
+                    <a href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="diary">
+                <div class="diary-title">
+                    <h2>Diary-List</h2>
+                </div>
+                <div class="diary-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>캘린더아이디</th>
+                                <th>감정</th>
+                                <th>내용</th>
+                                <th>작성날짜</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>설렘</td>
+                                <td>나는전설이다</td>
+                                <td>2022-06-06</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>분노</td>
+                                <td>운빨X망겜</td>
+                                <td>2022-06-22</td>
+                            </tr>
+                            <tr>
+                                <td>29</td>
+                                <td>보통</td>
+                                <td>특별할것 없는 하루</td>
+                                <td>2022-06-25</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+    <script>
+        //시계 함수
+      function setClock(){
+      var dateInfo = new Date(); 
+      var hour = modifyNumber(dateInfo.getHours());
+      var min = modifyNumber(dateInfo.getMinutes());
+      var sec = modifyNumber(dateInfo.getSeconds());
+      var year = dateInfo.getFullYear();
+      var month = dateInfo.getMonth()+1; //monthIndex를 반환해주기 때문에 1을 더해준다.
+      var date = dateInfo.getDate();
+      document.getElementById("time").innerHTML = hour + ":" + min  + ":" + sec;
+      document.getElementById("date").innerHTML = year + "년 " + month + "월 " + date + "일";
+      }
+      function modifyNumber(time){
+          if(parseInt(time)<10){
+              return "0"+ time;
+          }
+          else
+              return time;
+      }
+      window.onload = function(){
+          setClock();
+          setInterval(setClock,1000); //1초마다 setClock 함수 실행
+      }
+    </script>
+    <script>
+
+        diaryList()
+        function diaryList(){
+            $.ajax({
+                url: "http://localhost:8080/calendar/1",
+                type: "Get",
+                dataType:"json",
+                success:(response) =>{
+                    let html='';
+                    console.log(response.length)
+                    if(response.length > 0){
+                        for(let i=0; i<response.length;i++){
+                            html+="<tr><td>"+response[i].calendarId+"</td><td>"+response[i].calendarEmotion+"</td><td>"+response[i].content+"</td><td>"+response[i].createAt+"</td></tr>"
+                        }
+                    }else{
+                        html += '<tr><td colspan=6 style="text-align:center">게시판이 없습니다.</td></tr>'
+                    }
+                    $("tbody").children().remove();
+                    $("tbody").append(html);
+                }
+            })
+        }
+    </script>
+</body>
+</html>
