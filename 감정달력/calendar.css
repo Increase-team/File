@@ -1,8 +1,8 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
 
   /* sieheader */
   .sideheader {
@@ -453,7 +453,31 @@
     } */
 
     /* 일기장 css  */
-    .diary{
-      display: flex;
-      justify-content: space-around;
+    main{
+      padding: 15px;
+      position: absolute;
+      left: 250px;
+      width: calc(97% - 250px);
+      height: 95%;
+      box-shadow: 5px 0px 5px 5px gray;
+      margin-top: 15px;
+      margin-left: 30px;
+    }
+    .diary-title{
+      font-size: 25px;
+    }
+
+    .diary table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+  
+    .diary table thead th{
+        text-align: center;
+        font-weight: 600;
+    }
+    .diary table tbody td{
+        text-align: center;
+        padding: 10px;
     }
