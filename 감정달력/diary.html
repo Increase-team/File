@@ -44,18 +44,37 @@
                 </div>
             </div>
             </div>
-            <div class="list">
-                <div class="picture">
+            <ul class="list">
+                <li class="picture">
                     <a href="#">달력</a>
-                </div>
-                <div class="statistics">
+                </li>
+                <li class="statistics">
                     <a href="#layer" id="player" class="status">통계</a>
-                </div>
-                <div class="question">
+                </li>
+                <li class="question">
                     <a href="#">도움말</a>
-                </div>
-                <div class="logout">
+                </li>
+                <li class="logout">
                     <a href="#">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 글 작성 수정 -->
+        <div class="update-popup">
+            <div class="editor">
+                <div class="close">
+                    <a href="#" class="btn-close">닫기</a>
+                </div>
+                <div class="input-box">
+                    <label for="title">제목 : </label>
+                    <input id="upt-title" type="text" placeholder="제목을 입력하세요...">
+                </div>
+                <div class="input-box">
+                    <textarea id="upt-content" rows="10" cols="65" placeholder="내용을 간단히 적어주세요..."></textarea>
+                </div>
+                <div class="btn-area">
+                    <a id="contentUpdate" href="#" class="btn-update">수정</a>
+                    <a id="contentDelete" href="#" class="btn-delete">삭제</a>
                 </div>
             </div>
         </div>
@@ -74,7 +93,7 @@
                                 <th>작성날짜</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="data">
                             <tr>
                                 <td>1</td>
                                 <td>설렘</td>
@@ -99,6 +118,11 @@
             </div>
         </main>
     </div>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
     <script>
         //시계 함수
       function setClock(){
@@ -123,6 +147,15 @@
           setClock();
           setInterval(setClock,1000); //1초마다 setClock 함수 실행
       }
+
+    $('.btn-close').click(function(){
+        $('.update-popup').css('display', 'none');
+    })
+
+    $("#data").click(function(){
+        $('.update-popup').css('display', 'block');
+    })
+
     </script>
 </body>
 </html>

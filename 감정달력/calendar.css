@@ -112,22 +112,32 @@
 
   .list {
     padding-left: 10%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .list div {
+  .list li {
     padding: 10%;
+    list-style: none;
   }
 
-  .list div a {
+  .list li a {
     text-decoration: none;
     color: black;
   }
 
-  .list div a:hover {
+  .list li a:hover {
     color: violet;
     transition: 1.5s;
   }
 
+  .list  li:hover ,
+  .list li.hovered 
+  {
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
   .picture:hover {
     background-color: white;
     border-top-left-radius: 15px;
@@ -274,8 +284,8 @@
   #layer {
     display: none;
     position: absolute;
-    top: 80%;
-    left: 75%;
+    top: 35%;
+    left: 28.7%;
     width: 600px;
     height: 376px;
     margin: -188px 0 0 -300px;
@@ -327,6 +337,7 @@
 
   /* 달력 전체 틀 */
   .calendarbox {
+    width: calc(100%-250px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -476,15 +487,64 @@
     }
   
     .diary-content table thead th{
+        padding-bottom: 20px;
         text-align: center;
         font-weight: 600;
     }
     .diary-content table tbody td{
         text-align: center;
         padding: 10px;
-        border-bottom: 1px solid black;
+        border-top: 1px solid black;
     }
     
     .diary-content table tbody tr:hover {
-      background-color: slateblue;   
+      background-color: slateblue;
+      cursor: pointer;   
     }
+    /* 일기장 팝업 */
+    .update-popup{
+      z-index: 1;
+      display: none;
+      position: absolute;
+      left: 0; 
+      right: 0; 
+      margin : 40px auto;
+      width: 700px;
+      height: 500px;
+      background-color: white;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.3);
+      border-radius: 5px;
+  }
+  
+  .btn-update{
+      font-size: 18px;
+      background-color: #f6c23e;
+      padding: 2%;
+      text-decoration: none;
+      color: snow;
+      border-radius: 3px;
+      margin-right: 10px;
+  }
+  
+  .btn-delete{
+      font-size: 18px;
+      background-color: #36b9cc;
+      padding: 2%;
+      text-decoration: none;
+      color: snow;
+      border-radius: 3px;
+  }
+  .close{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      right: -10px;
+  }
+  .btn-close{
+      font-size: 18px;
+      background-color: #5a5c69;
+      padding: 2%;
+      text-decoration: none;
+      color: white;
+      border-radius: 3px;
+  }

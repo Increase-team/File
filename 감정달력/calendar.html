@@ -97,20 +97,20 @@
             </div>
           </div>
         </div>
-        <div class="list">
-          <div class="picture">
+        <ul class="list">
+          <li class="picture">
             <a href="#">일기장</a>
-          </div>
-          <div class="statistics">
+          </li>
+          <li class="statistics">
             <a href="#layer" id="player" class="status">통계</a>
-          </div>
-          <div class="question">
+          </li>
+          <li class="question">
             <a href="#">도움말</a>
-          </div>
-          <div class="logout">
+          </li>
+          <li class="logout">
             <a href="#">Logout</a>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
       <div class="calendarbox">
         <div class="calendar">
@@ -323,6 +323,15 @@
         var plate = $("#issitation").val();
         $("#selected-color")[0].innerHTML = plate;
       });
+
+
+      // 클릭시 사이드헤더 색 변경
+      let list = document.querySelectorAll('.list li');
+      function activeLink(){
+        list.forEach((item) => {item.classList.remove('hovered')});
+        this.classList.add('hovered');
+      }
+      list.forEach((item) => {item.addEventListener('mouseover',activeLink)});
     </script>
   </body>
 </html>
