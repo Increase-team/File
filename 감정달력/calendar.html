@@ -49,14 +49,64 @@
       <div id="layer">
         <div class="inner">
           <div class="cont">
-            <iframe
-              id="player"
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Uy7Sm7_A70M"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
+            <div id="estimate">
+                <div class="cardBox">
+                  <div class="card">
+                      <div>
+                        <div id="studentscnt" class="numbers">1,400</div>
+                        <div class="cardName">기쁨</div>
+                      </div>
+                      <div class="iconBx">
+                        <ion-icon name="school-outline"></ion-icon>
+                      </div>
+                  </div>
+                  <div class="card">
+                    <div>
+                        <div id="boardcnt" class="numbers">500</div>
+                        <div class="cardName">보통</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div id="writecnt" class="numbers">300</div>
+                        <div class="cardName">설렘</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="code-slash-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div id="viewcnt" class="numbers">2,800</div>
+                        <div class="cardName">분노</div>
+                    </div>
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+                <div class="card">
+                  <div>
+                      <div id="viewcnt" class="numbers">2,800</div>
+                      <div class="cardName">슬픔</div>
+                  </div>
+                  <div class="iconBx">
+                      <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+              </div>
+              <div class="card">
+                <div>
+                    <div id="viewcnt" class="numbers">2,800</div>
+                    <div class="cardName">짜증</div>
+                </div>
+                <div class="iconBx">
+                    <ion-icon name="eye-outline"></ion-icon>
+                </div>
+            </div>
+              </div>
+            </div>
           </div>
           <a href="#none" class="close">close</a>
         </div>
@@ -102,7 +152,7 @@
             <a href="#">일기장</a>
           </li>
           <li class="statistics">
-            <a href="#layer" id="player" class="status">통계</a>
+            <a href="#layer" id="estimate" class="status">통계</a>
           </li>
           <li class="question">
             <a href="#">도움말</a>
@@ -111,8 +161,9 @@
             <a href="#">Logout</a>
           </li>
         </ul>
-      </div>
+      </div>  
       <div class="calendarbox">
+        <div class="calender-picutre"></div>
         <div class="calendar">
           <div class="header">
             <button class="calendar_btn" onclick="prevCal();">
@@ -223,7 +274,7 @@
       buildcalendar();
 
       $(function () {
-        var embed = $("#player"); //동영상 코드
+        var embed = $("#estimate"); //팝업 코드
 
         $(".status").on("click", function () {
           //레이어 열때
