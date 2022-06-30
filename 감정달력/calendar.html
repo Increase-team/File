@@ -233,7 +233,25 @@
             today.getMonth() == CDate.getMonth() &&
             today.getFullYear() == CDate.getFullYear()
           ) {
-            htmlDates += '<div id="date_' + dates[i] + '" class="date today" onclick="xx()"><div style="background-color: #f2cfa5; height: 100%;">' + dates[i] + "</div></div>";
+            htmlDates += '<div id="date_' + dates[i] + '" class="date-today" onclick="xx()"><input type="hidden">' + dates[i] + "</input></div>";
+            $("#happy").click(function () {
+              $(".date-today").css("background-color", "yellow");
+            });
+            $("#soso").click(function () {
+              $(".date-today").css("background-color", "silver");
+            });
+            $("#romance").click(function () {
+              $(".date-today").css("background-color", "pink");
+            });
+            $("#angry").click(function () {
+              $(".date-today").css("background-color", "red");
+            });
+            $("#sad").click(function () {
+              $(".date-today").css("background-color", "blue");
+            });
+            $("#issitation").click(function () {
+              $(".date-today").css("background-color", "orangered");
+            });
           } else if (i >= thisFirst.getDay() + thisLast.getDate()) {
             htmlDates += '<div class="date next">' + dates[i] + "</div>";
           } else if (
@@ -243,12 +261,12 @@
             htmlDates +=
               '<div id="date_' +
               dates[i] +
-              '" class="date" onclick="yy()">' +
+              '" class="date" onclick="yy()"><div value="'+dates[i]+'">' +
               dates[i] +
-              "</div>";
+              "</div></div>";
           } else if (
             i <= thisFirst.getDay() + thisLast.getDate() &&
-            dates[i] > today.getDate()
+            dates[i] >= today.getDate()
           ) {
             htmlDates +=
               '<div id="date_' +
@@ -257,9 +275,35 @@
               dates[i] +
               "</div>";
           }
-        }
+            // $("#happy").click(function () {
+            //   $("#date_30").css("background-color", "yellow");
+            // });
+            // $("#soso").click(function () {
+            //   $("#date_30").css("background-color", "silver");
+            // });
+            // $("#romance").click(function () {
+            //   $("#date_30").css("background-color", "pink");
+            // });
+            // $("#angry").click(function () {
+            //   $("#date_30").css("background-color", "red");
+            // });
+            // $("#sad").click(function () {
+            //   $("#date_30").css("background-color", "blue");
+            // });
+            // $("#issitation").click(function () {
+            //   $("#date_30").css("background-color", "orangered");
+            // });
+          //  console.log(dates[i])
 
+        }
+        console.log($("#date_30").find())
+        var test = $("#date_30").find().prevObject;
+        console.log(test)
         document.querySelector(".dates").innerHTML = htmlDates;
+        if(test == "date"){
+          alert("안녕")
+        }
+           
       };
 
       function prevCal() {
@@ -306,16 +350,38 @@
       // $('.write-popup').css('display', 'none');
       // });
 
+      
       function xx() {
         $(".write-popup").css("display", "block");
         $(".cancel").click(function () {
-          $(".write-popup").css("display", "none");
-          location.reload();
+        $(".write-popup").css("display", "none");
         });
+        $("#contentSubmit").click(function(){
+          buildcalendar();
+        })
       }
 
       function yy() {
         $(".write-popup").css("display", "block");
+        $("#happy").click(function () {
+            $("#date_29").css("backgroun-color", "yellow");
+            });
+            $("#soso").click(function () {
+              $("#date_29").css("backgroun-color", "yellow");
+            });
+            $("#romance").click(function () {
+              $("#date_29").css("backgroun-color", "pink");
+            });
+            $("#angry").click(function () {
+              $("#date_29").css("backgroun-color", "red");
+            });
+            $("#sad").click(function () {
+              $("#date_29").css("backgroun-color", "yellow");
+            });
+            $("#issitation").click(function () {
+              $("#date_29").css("backgroun-color", "yellow");
+            });
+
         $(".cancel").click(function () {
           $(".write-popup").css("display", "none");
         });
