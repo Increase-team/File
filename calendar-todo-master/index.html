@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>calendar todo</title>
+  </head>
+  <body>
+
+
+    <div class="sideheader">
+      <!-- 시간 및 날짜 -->
+      <div id="date" class="date"></div>
+      <div id="time" class="time"></div>
+      <div class="emotion">
+        <div class="positive">
+          <div class="happy">
+            <p>기쁨</p>
+            <div class="happy-color"></div>
+          </div>
+          <div class="soso">
+            <p>보통</p>
+            <div class="soso-color"></div>
+          </div>
+          <div class="romance">
+            <p>설렘</p>
+            <div class="romance-color"></div>
+          </div>
+        </div>
+        <div class="negetive">
+          <div class="angry">
+            <p>분노</p>
+            <div class="angry-color"></div>
+          </div>
+          <div class="sad">
+            <p>슬픔</p>
+            <div class="sad-color"></div>
+          </div>
+          <div class="issitation">
+            <p>짜증</p>
+            <div class="issitation-color"></div>
+          </div>
+        </div>
+      </div>
+      <ul class="list">
+        <li class="picture">
+          <a href="#">일기장</a>
+        </li>
+        <li class="statistics">
+          <a href="#layer" id="estimate" class="status">통계</a>
+        </li>
+        <li class="question">
+          <a href="#">도움말</a>
+        </li>
+        <li class="logout">
+          <a href="#">Logout</a>
+        </li>
+      </ul>
+    </div>  
+    <div class="main">
+      <div class="content-wrap">
+        <div class="content-left">
+          <div class="main-wrap">
+            <div id="main-day" class="main-day"></div>
+            <div id="main-date" class="main-date"></div>
+          </div>
+          <h3 id="selected-color" style="text-align: center">
+            선택하신 감정은
+          </h3>
+          <div class="color-select">
+            <input id="hidden" type="hidden" val="" />
+            <div id="positive">
+              <button id="happy" value="기쁨"></button>
+              <button id="soso" value="보통"></button>
+              <button id="romance" value="설렘"></button>
+            </div>
+            <div id="negetive">
+              <button id="angry" value="분노"></button>
+              <button id="sad" value="슬픔"></button>
+              <button id="issitation" value="짜증"></button>
+            </div>
+          </div>
+          <div class="todo-wrap">
+            <div class="todo-title">그날의 기분을 적어보세요</div>
+            <div class="input-wrap">
+              <input
+                type="text"
+                placeholder="please write here!!"
+                id="input-box"
+                class="input-box"
+              />
+              <button type="button" id="input-data" class="input-data">
+               등록
+              </button>
+              <div id="input-list" class="input-list"></div>
+            </div>
+          </div>
+        </div>
+        <div class="content-right">
+          <table id="calendar" align="center">
+            <thead>
+              <tr class="btn-wrap clearfix">
+                <td>
+                  <label id="prev"> &#60; </label>
+                </td>
+                <td align="center" id="current-year-month" colspan="5"></td>
+                <td>
+                  <label id="next"> &#62; </label>
+                </td>
+              </tr>
+              <tr>
+                <td class="sun" align="center">Sun</td>
+                <td align="center">Mon</td>
+                <td align="center">Tue</td>
+                <td align="center">Wed</td>
+                <td align="center">Thu</td>
+                <td align="center">Fri</td>
+                <td class="sat" align="center">Sat</td>
+              </tr>
+            </thead>
+            <tbody id="calendar-body" class="calendar-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  <script src="./app/index.js"></script>
+  
+</html>
