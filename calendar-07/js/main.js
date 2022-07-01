@@ -52,7 +52,7 @@
 //      清除原来的样式和日期
         for(var k = 0; k <42; k++) {
             days[k].innerHTML = '';
-            days[k].id = k-2;
+            days[k].id = '';
             days[k].className = '';
         }
 
