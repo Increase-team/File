@@ -1,0 +1,132 @@
+<input type="checkbox" id="check" />
+	<label for="check">
+	<i class="fa-solid fa-bars" id="btn"></i>
+	<i class="fa-solid fa-times" id="cancel"></i>
+	</label>	
+
+<header>menu</header>
+
+		<ul class="list">
+			<li class="picture"><a
+				href="/calendar/diary?membername=${list[0].memberName}&pageNum=1&pageSize=20"><i class="fa-solid fa-book" style="margin-right: 12px"></i>
+일기장</a></li>
+			<li class="statistics"><a href="#layer" id="estimate"
+				class="status"><i class="fa-solid fa-chart-column" style="margin-right: 12px"></i>통계</a></li>
+			<li class="logout"><a href="/logout"><i class="fa-solid fa-arrow-right-from-bracket" style="margin-right: 12px"></i>Logout</a></li>
+		</ul>
+	</div>
+
+
+
+
+
+.sideheader {
+	position: fixed;
+	left: -250px;
+	width: 250px;
+	height: 100%;
+	background-color: skyblue;
+	transition: 0.5s;
+	overflow: hidden;
+	transition: all 1.5s ease;
+}
+
+
+
+.sideheader header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+}
+
+#check{
+	display: none;
+}
+
+label #btn, label #cancel{
+	position: absolute;
+	cursor: pointer;
+	color: white;
+}
+
+label #btn{
+	left: 40px;
+	top: 25px;
+	font-size: 35px;
+	padding: 6px, 12px;
+	transition: all 1.5s ease;
+}
+
+label #cancel{
+	z-index: 1111;
+	left: -180px;
+	top: 17px;
+	font-size: 35px;
+	padding: 4px 9px;
+	transition: all 1.5s ease;	
+}
+
+#check:checked ~ .sideheader{
+	left: 0;
+}
+#check:checked ~ label #btn {
+	left: 250px;
+	opacity: 0;
+	pointer-events: nones;
+}
+#check:checked ~ label #cancel {
+	left: 180px;
+}
+.list {
+	padding-left: 10%;
+	display: flex;
+	flex-direction: column;
+}
+
+.list li {
+	padding: 10%;
+	font-size: 20px;
+	list-style: none;
+}
+
+.list li a {
+	text-decoration: none;
+	color: black;
+}
+
+.list li a:hover {
+	color: violet;
+	transition: 1.5s;
+	padding-left: 25px; 
+}
+
+.list  li:hover, .list li.hovered {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.picture:hover {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.statistics:hover {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.question:hover {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.logout:hover {
+	background-color: white;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
